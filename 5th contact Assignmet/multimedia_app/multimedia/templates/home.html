@@ -1,0 +1,36 @@
+{% comment %} {% extends 'base.html' %}
+
+{% block content %}
+  <h1>My Images</h1>
+  {% for image in images %}
+    <div>
+      <h2>{{ image.title }}</h2>
+      <img src="{{ image.image.url }}" alt="{{ image.title }}">
+    </div>
+  {% empty %}
+    <p>No images uploaded yet.</p>
+  {% endfor %}
+{% endblock %} {% endcomment %}
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+    <div style="text-align: center; display: flex; width: 100%;">
+      <div style="flex-basis: 50%;">
+        <a href="{% url 'home' %}">
+          <img src="../../static/img/coffee.png" width="100%">
+          <p>Coffee Time</p>
+        </a>
+      </div>
+
+      <div style="flex-basis: 50%;">
+        <a href="{% url 'home' %}">
+          <img src="../../static/img/love it.png" width="100%">
+          <p>I love it</p>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

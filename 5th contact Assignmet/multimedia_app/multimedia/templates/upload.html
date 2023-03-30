@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>My Images</h1>
+  {% if images %}
+    {% for image in images %}
+      <div>
+        <h2>{{ image.title }}</h2>
+        <img src="{{ image.url }}" width="100%">
+        <p>{{ image.description }}</p>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No images uploaded yet.</p>
+  {% endif %}
+{% endblock %}
+
+<!-- The following code seems to be unrelated to the previous block, so I assume it's a separate template file -->
+
+{% comment %} <html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <div>
+    <div style="text-align: center; display: flex; width: 100%;">
+      <div style="flex-basis: 50%;">
+        <a href="{% url 'home' %}">
+          <img src="../../static/img/coffee.png" width="100%">
+          <p>Coffee Time</p>
+        </a>
+      </div>
+
+      <div style="flex-basis: 50%;">
+        <a href="{% url 'home' %}">
+          <img src="../../static/img/love it.png" width="100%">
+          <p>I love it</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html> {% endcomment %}

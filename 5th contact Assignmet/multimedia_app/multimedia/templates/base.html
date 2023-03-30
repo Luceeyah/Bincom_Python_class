@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My Multimedia App</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'upload' %}">Upload</a></li>
+    </ul>
+  </nav>
+  {% block content %}{% endblock %}
+</body>
+</html>

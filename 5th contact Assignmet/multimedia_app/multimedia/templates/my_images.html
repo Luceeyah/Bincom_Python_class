@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>My Images</h1>
+  {% if images %}
+    {% for image in images %}
+      <div>
+        <h2>{{ image.title }}</h2>
+        <img src="{{ image.url }}" width="100%">
+        <p>{{ image.description }}</p>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No images uploaded yet.</p>
+  {% endif %}
+{% endblock %}
